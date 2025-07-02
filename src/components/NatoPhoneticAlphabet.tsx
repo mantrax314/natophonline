@@ -53,18 +53,18 @@ export default function NatoPhoneticAlphabet() {
         </h1>
       </div>
 
-      <div className="w-full max-w-md mx-auto flex-grow flex flex-col justify-center relative">
-        <div className="bg-black/20 backdrop-blur-sm rounded-lg p-4 h-3/4 flex items-center justify-center">
+      <div className="w-full max-w-md mx-auto flex-grow flex flex-col justify-center">
+        <div className="bg-black/20 backdrop-blur-sm rounded-lg p-4 h-3/4 flex items-center justify-center relative">
             <p className="text-white text-center text-2xl">{phoneticText}</p>
+            {phoneticText && (
+                <button 
+                    onClick={copyToClipboard}
+                    className="absolute bottom-4 right-4 bg-gray-800/50 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-700/50"
+                >
+                    COPY
+                </button>
+            )}
         </div>
-        {phoneticText && (
-            <button 
-                onClick={copyToClipboard}
-                className="absolute bottom-8 right-8 bg-gray-800/50 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-700/50"
-            >
-                COPY
-            </button>
-        )}
       </div>
 
       <div className="w-full max-w-md mx-auto relative">
